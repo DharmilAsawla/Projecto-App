@@ -1,11 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:charts"
-             x:Class="charts.MainPage">
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             x:Class="charts.MainPage"
+             
+             Title="Projecto"
+             
 
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+            >
+<ContentPage>
+    <ScrollView>
+        <StackLayout Spacing="10" BackgroundColor="White">
+            
+            <Label FontSize="24" Text="Dashboard"></Label>
 
+            <controls:CarouselViewControl x:Name="chartcarousel"    
+                                          
+                                          CurrentPageIndicatorTintColor="Blue"
+                                          ShowIndicators="true"
+                                          HeightRequest="250"
+                                          Orientation="Horizontal"
+                                          BackgroundColor="Black">
+            </controls:CarouselViewControl>
+
+            <Label FontSize="24" Text="Project Tasks"></Label>
+            
+
+
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
+    
+    <ContentPage>
+        <StackLayout BackgroundColor="White">
+            <Label Text="Team Members" FontSize="24"></Label>
+            <BoxView BackgroundColor="Blue" HeightRequest="250"></BoxView>
+
+            </StackLayout>
+    </ContentPage>
+
+</CarouselPage>
+
+
+
